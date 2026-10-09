@@ -87,7 +87,7 @@ Currently the defaults are:
 
 Why is that?
 
-The idea is that frequently in a multi-node scenario multiple sequential calls from the same user may go through different nodes, and frequently not all nodes have the same cached value locally (in the memroy cache, L1): this means that if we wait at least the distributed cache operation after an update, even if the next call would go through a different node where the value is not cached, it will be automatically taken from the distributed cache, with the new value. Backplane operations are also usually way faster than a distributed cache save, and this means that it's very unlikely that the system can observe an unsynchronized state.
+The idea is that frequently in a multi-node scenario multiple sequential calls from the same user may go through different nodes, and frequently not all nodes have the same cached value locally (in the memory cache, L1): this means that if we wait at least the distributed cache operation after an update, even if the next call would go through a different node where the value is not cached, it will be automatically taken from the distributed cache, with the new value. Backplane operations are also usually way faster than a distributed cache save, and this means that it's very unlikely that the system can observe an unsynchronized state.
 
 In general, these defaults strike a good balance overall, all things considered.
 
