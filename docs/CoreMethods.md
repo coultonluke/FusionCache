@@ -103,7 +103,7 @@ var foo = cache.GetOrSet<int>(
         .SetFailSafe(true, TimeSpan.FromHours(1), TimeSpan.FromSeconds(30))
 );
 
-// AS ABOVE, BUT IF THERE IS NO STALE DATA, A DEFAULT VALUE WILL BE SET (FOR 30 SEC, ETC...) ADN RETURNED
+// AS ABOVE, BUT IF THERE IS NO STALE DATA, A DEFAULT VALUE WILL BE SET (FOR 30 SEC, ETC...) AND RETURNED
 var foo = cache.GetOrSet<int>(
     "foo",
     _ => GetFooFromDb()
